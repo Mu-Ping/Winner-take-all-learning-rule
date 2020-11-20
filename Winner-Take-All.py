@@ -34,7 +34,14 @@ def gen_data():
             single_data.append([new_x, new_y])
             plt.plot(new_x, new_y, 'o', ms=3 , color = 'gray', alpha=.8) #畫圖 ms：折點大小
     canvas1.draw()
-    
+def Euclid():
+    pass
+def Cosθ():
+    pass
+def Dot():
+    pass
+def start():
+    pass
 window = tk.Tk()
 window.geometry("520x390")
 window.resizable(False, False)
@@ -58,7 +65,7 @@ data_combobox = ttk.Combobox(setting1, value = classification, state="readonly",
 data_combobox.grid(row=5, sticky=tk.W)
 btn = tk.Button(setting1, text='隨機產生資料', command = gen_data)
 btn.grid(row=6, sticky=tk.W, pady=20)
-btn = tk.Button(setting1, text='開始訓練')
+btn = tk.Button(setting1, text='開始訓練', command = start)
 btn.grid(row=7, sticky=tk.W)
 
 setting2 = tk.Frame(window)
