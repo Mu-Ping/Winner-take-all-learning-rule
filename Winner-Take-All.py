@@ -80,15 +80,12 @@ def Dot():
     
 def start():
     if(data_combobox.current()==0):
-        print(1)
         Euclid()
         
     elif(data_combobox.current()==1):
-        print(2)
         Cosθ()
         
     else:
-        print(3)
         Dot()
         
 window = tk.Tk()
