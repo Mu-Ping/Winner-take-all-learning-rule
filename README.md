@@ -1,5 +1,5 @@
 # Winner-take-all-learning-rule
-> 一種採用「**競爭式學習法**」的「**單層類神經網路**」，屬於「**非監督式學習**」，有時也被稱為 Kohonen learning rule。
+> 一種「**競爭式學習法**」的「**單層類神經網路**」，屬於「**非監督式學習**」，有時也被稱為 Kohonen learning rule。
 * **神經網路架構圖：**  
   <img src="https://i.imgur.com/rQCmg1H.png" width="207" height="230">
 * **演算法的步驟：**  
