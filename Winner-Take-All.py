@@ -17,9 +17,9 @@ def gen_data():
     for _ in range(neurons.get()): #群數
         center_x = np.random.randint(-31, 31)
         center_y = np.random.randint(-31, 31)
-        for _ in range(np.random.randint(20, 50)): #一群的點數
-            new_x = center_x + np.random.uniform(-2, 2)
-            new_y = center_y + np.random.uniform(-2, 2)
+        for _ in range(np.random.randint(100, 150)): #一群的點數
+            new_x = center_x + np.random.uniform(-30, 30)
+            new_y = center_y + np.random.uniform(-30, 30)
             data.append([new_x, new_y])
             plt.plot(new_x, new_y, 'o', ms=3 , color = 'gray', alpha=.8) #畫圖 ms：折點大小
     data = np.array(data)
@@ -32,7 +32,7 @@ def Euclid():
             ans=[]
             for j in range(neurons.get()):
                 ans.append(((i[0]-weight.T[j][0])**2 + (i[1]-weight.T[j][1])**2)**0.5)
-            winner = np.argmax(np.array(ans))
+            winner = np.argmin(np.array(ans))
             weight.T[winner] = weight.T[winner] + lr.get()*(i-weight.T[winner])
     #劃出結果
     plt.clf()
@@ -60,7 +60,7 @@ def Cosθ():
     for i in data:
         ans=[]
         for j in range(neurons.get()):
-            ans.append(i.dot(weight.T[j])/(i[0]*i[0]+i[1]*i[1])**0.5/(weight.T[j][0]*weight.T[j][0]+weight.T[j][1]*weight.T[j][1])**0.5)
+            ans.append(i.dot(weight.T[j])/(i[0]**2+i[1]**2)**0.5/(weight.T[j][0]**2+weight.T[j][1]**2)**0.5)
         winner = np.argmax(np.array(ans))
         plt.plot(i[0], i[1], 'o', ms=3 , color = color[winner], alpha=.8) #畫圖 ms：折點大小
     canvas1.draw()
