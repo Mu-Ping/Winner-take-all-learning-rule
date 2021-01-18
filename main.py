@@ -34,6 +34,7 @@ def Euclid():
                 ans.append(((i[0]-weight.T[j][0])**2 + (i[1]-weight.T[j][1])**2)**0.5)
             winner = np.argmin(np.array(ans))
             weight.T[winner] = weight.T[winner] + lr.get()*(i-weight.T[winner])
+
     #劃出結果
     plt.clf()
     plt.title("Data")
@@ -41,7 +42,7 @@ def Euclid():
         ans=[]
         for j in range(neurons.get()):
             ans.append(((i[0]-weight.T[j][0])**2 + (i[1]-weight.T[j][1])**2)**0.5)
-        winner = np.argmax(np.array(ans))
+        winner = np.argmin(np.array(ans))
         plt.plot(i[0], i[1], 'o', ms=3 , color = color[winner], alpha=.8) #畫圖 ms：折點大小
     canvas1.draw()
     
