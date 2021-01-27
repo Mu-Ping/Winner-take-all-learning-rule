@@ -1,16 +1,20 @@
 # Winner-Take-All-Learning-Rule
-## 簡介
+## 程式簡介
+### 使用說明
+* 「學習率」與「訓練次數」皆可手動設定。
+
+* 「神經元個數」即代表要分成幾個類別，例如：2即分成2類；5即分成5類
+
+* 可選擇不同的得勝標準：「歐基里德距離」、「cosθ」、「內積」
+### 範例圖
+![](https://i.imgur.com/OsGVBEN.png)
+
+## 演算法簡介
 > 一種「**競爭式學習法**」的「**單層類神經網路**」，屬於「**非監督式學習**」，有時也被稱為 Kohonen learning rule。
 * **神經網路架構圖：**  
   <img src="https://i.imgur.com/rQCmg1H.png" width="207" height="230">
-* **演算法步驟：**  
-  * A. 競爭階段( Competitive phase )  
-  
-  * B. 獎勵階段( Reward phase )  
-  
-  * C. 疊代階段( Iteration phase )  
-## 演算法步驟
-### A. 競爭階段( Competitive phase ) - 選出得勝者( winner )
+### 演算法步驟
+#### A. 競爭階段( Competitive phase ) - 選出得勝者( winner )
   假設 x 為輸入[ x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>p</sub> ]；  w<sub>j</sub> 為第 j 個神經元的權重[ w<sub>j1</sub>, w<sub>j2</sub>, ..., w<sub>jp</sub> ]。  
   依照下列三種衡量方法來計算「第 j 個神經元的分數」，再依照不同標準選取得勝者：
   1. **歐基里德距離**
@@ -23,18 +27,18 @@
       * 獲勝標準： 最大者 
       * 評分公式： x · w<sub>j</sub><sup>T</sup>
 > **不同輸入 x 、 y 若在同個神經元得勝，表示 x 、 y 屬同一類。**  
-### B. 獎勵階段( Reward phase ) - 調整「得勝者」鍵結值
+#### B. 獎勵階段( Reward phase ) - 調整「得勝者」鍵結值
   選出得勝的神經元後對該神經元更新 ( 假設為第k個 )；沒有得勝的神經元不用更新。n 表疊代次數、lr 表學習效率  
 * w<sub>k</sub>( n+1 ) = w<sub>k</sub>( n ) + lr( x - w<sub>k</sub>( n ))
 > **目的是讓 x 下次輸入時更容易在第k個神經元得勝( 換句話說就是讓 x 更容易被分類為該類別 )**
-### C. 疊代階段( Iteration phase ) - 檢查停止訓練條件是否吻合
+#### C. 疊代階段( Iteration phase ) - 檢查停止訓練條件是否吻合
 簡而言之就是決定訓練何時停止，主要有以下二方法：
 1. 鍵結值的改變量小於一固定閥值，訓練停止，反之繼續
 
 2. 設定Epoch  
 
 如果未達停止標準，回到步驟A繼續訓練。
-## 特性分析
+### 特性分析
 
 1. 不同衡量方法會影響整個「分類結果」與「群集的幾何特性」。
 
@@ -48,10 +52,9 @@
 3. 神經元個數即代表分類的種類，如果設定不對( 不等於實際資料的群聚數目 )，可能會將資料錯誤分類。
 
 4. 此演算法「效果」與k-means演算法類似，都可以用來做「向量量化」(vector quantization)的工作
-## 結論
+### 結論
 此專案不著重在分群的Performance上，而是透過程式練習一些「非監督式學習」中很基礎的分群概念，以利延伸。
-## 程式範例圖
-![](https://i.imgur.com/OsGVBEN.png)
+
 
 @author： [Mu-Ping](https://github.com/Mu-Ping)  
 @e-mail： k0326jim@gmail.com
