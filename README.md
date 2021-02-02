@@ -13,7 +13,7 @@
 ### 範例圖：
 ![](https://i.imgur.com/OsGVBEN.png)
 
-## 演算法
+## Winner Take All Learning Rule 演算法
 ### 演算法步驟：
 #### A. 競爭階段( Competitive phase ) - 選出得勝者( winner )
   假設 x 為輸入[ x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>p</sub> ]；  w<sub>j</sub> 為第 j 個神經元的權重[ w<sub>j1</sub>, w<sub>j2</sub>, ..., w<sub>jp</sub> ]。  
