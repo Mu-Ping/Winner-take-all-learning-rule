@@ -14,6 +14,18 @@
 ![](https://i.imgur.com/OsGVBEN.png)
 
 ## Winner Take All Learning Rule 演算法
+### 演算法簡介
+> 一種用於「**聚類**」的「**非監督式學習**」演算法
+* 不同神經元即代表不同類別
+
+* 數據在第n個神經元得勝，代表該數據被聚類在該種類
+
+* 得勝標準有很多種類，每個效果都不一樣
+
+* 一種使用**競爭式學習法**的**單層類神經網路**，也被稱為 Kohonen learning rule。
+
+* **神經網路架構圖：**  
+  <img src="https://i.imgur.com/rQCmg1H.png" width="207" height="230">
 ### 演算法步驟：
 #### A. 競爭階段( Competitive phase ) - 選出得勝者( winner )
   假設 x 為輸入[ x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>p</sub> ]；  w<sub>j</sub> 為第 j 個神經元的權重[ w<sub>j1</sub>, w<sub>j2</sub>, ..., w<sub>jp</sub> ]。  
@@ -39,19 +51,6 @@
 2. 設定Epoch  
 
 如果未達停止標準，回到步驟A繼續訓練。
-
-### 演算法簡介
-> 一種用於「**聚類**」的「**非監督式學習**」演算法
-* 不同神經元即代表不同類別
-
-* 數據在第n個神經元得勝，代表該數據被聚類在該種類
-
-* 得勝標準有很多種類，每個效果都不一樣
-
-* 一種使用**競爭式學習法**的**單層類神經網路**，也被稱為 Kohonen learning rule。
-
-* **神經網路架構圖：**  
-  <img src="https://i.imgur.com/rQCmg1H.png" width="207" height="230">
   
 ### 特性分析：
 
